@@ -17,60 +17,61 @@ $(function() {
 		if ('not_login' === response.status) { //user not login
 			console.log(response.status);
 		} else if ('login' === response.status) {
-			$.ajax({
-				url: 'login_backend.php',
-				cache: false,
-				type: 'GET',
-				data: {
-					accesstoken: response.access_token
-				},
-				error: function(xhr) {
-					alert("ajax error1");
-					//deal with errors
-				},
-				success: function(response) {
-					alert("登录成功");
-					//deal with success
-				}
-			});
+			// $.ajax({
+			// 	url: 'login_backend.php',
+			// 	cache: false,
+			// 	type: 'GET',
+			// 	data: {
+			// 		accesstoken: response.access_token
+			// 	},
+			// 	error: function(xhr) {
+			// 		alert("ajax error1");
+			// 		//deal with errors
+			// 	},
+			// 	success: function(response) {
+			// 		alert("登录成功");
+			// 		//deal with success
+			// 	}
+			// });
 			console.log(response.status);
 			console.log(response.access_token);
+			console.log(response)
 			$("#login-button").remove();
 			alt.style.display = 'block';
 			//alert("access token: "+ response.access_token);
 			//000000000000000000000000000000000000000000000000000000
-			$.ajax({
-				url: "https://bird.ioliu.cn/v2",
-				type: "GET",
-				//send it through get method
-				cache: false,
-				//async : false,
-				data: {
-					url: 'https://sales.shkundi.com:5001/webman/sso/SSOAccessToken.cgi?action=exchange',
-					access_token: response.access_token,
-					app_id: 'a1bf013a679c80f789805cbffd93849a'
-				},
-				//dataType : "jsonp",
-				//jsonp : "jsonpCallback",
-				success: function(data) {
-					//Do Something
-					var id = null;
-					var nickname = null;
-					var info = JSON.parse(data);
-					var id = info.data.user_id;
-					var nickname = info.data.user_name;
-					//console.log(data);
-					//console.log(info);
-					console.log(id);
-					console.log(nickname);
-					document.getElementById("userid").innerHTML = id;
-					document.getElementById("username").innerHTML = nickname;
-				},
-				error: function(xhr) {
-					//Do Something to handle error
-					alert("ajax error2");
-				}
-			});
+			// $.ajax({
+			// 	url: "https://bird.ioliu.cn/v2",
+			// 	type: "GET",
+			// 	//send it through get method
+			// 	cache: false,
+			// 	//async : false,
+			// 	data: {
+			// 		url: 'https://sales.shkundi.com:5001/webman/sso/SSOAccessToken.cgi?action=exchange',
+			// 		access_token: response.access_token,
+			// 		app_id: 'a1bf013a679c80f789805cbffd93849a'
+			// 	},
+			// 	//dataType : "jsonp",
+			// 	//jsonp : "jsonpCallback",
+			// 	success: function(data) {
+			// 		//Do Something
+			// 		var id = null;
+			// 		var nickname = null;
+			// 		var info = JSON.parse(data);
+			// 		var id = info.data.user_id;
+			// 		var nickname = info.data.user_name;
+			// 		//console.log(data);
+			// 		//console.log(info);
+			// 		console.log(id);
+			// 		console.log(nickname);
+			// 		document.getElementById("userid").innerHTML = id;
+			// 		document.getElementById("username").innerHTML = nickname;
+			// 	},
+			// 	error: function(xhr) {
+			// 		//Do Something to handle error
+			// 		alert("ajax error2");
+			// 	}
+			// });
 			//00000000000000000000000000000000000000000000000000000000
 		} else {
 			alert("加载登录模块失败");
