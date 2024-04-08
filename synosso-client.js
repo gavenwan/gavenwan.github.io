@@ -5,7 +5,7 @@ $(function() {
 	SYNOSSO.init({
 		oauthserver_url: 'https://sales.shkundi.com:5001',
 		app_id: 'a1bf013a679c80f789805cbffd93849a',
-		redirect_uri: 'https://sales.shkundi.com:5555/demo.html',
+		redirect_uri: 'https://gavenwan.github.io/demo.html',
 		//redirect URI have to be the same as the one registered in SSO server, and should be a plain text html file
 		callback: authCallback,
 		//domain_name:'https://act.jiawei.xin:5001',
