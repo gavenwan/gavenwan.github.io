@@ -36,6 +36,7 @@ $(function() {
 			// });
 			console.log(response.status);
 			console.log(response.access_token);
+			document.getElementById("userid").innerHTML = response.access_token;
 			// console.log(response)；
 			$("#login-button").remove();
 			alt.style.display = 'block';
