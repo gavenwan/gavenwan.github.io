@@ -14,6 +14,7 @@ $(function() {
 
 	function authCallback(response) {
 		console.log("client side");
+		console.log(response);
 		if ('not_login' === response.status) { //user not login
 			console.log(response.status);
 		} else if ('login' === response.status) {
@@ -35,7 +36,7 @@ $(function() {
 			// });
 			console.log(response.status);
 			console.log(response.access_token);
-			console.log(response)
+			// console.log(response)；
 			$("#login-button").remove();
 			alt.style.display = 'block';
 			//alert("access token: "+ response.access_token);
