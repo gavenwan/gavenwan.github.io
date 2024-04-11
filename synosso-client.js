@@ -43,6 +43,7 @@ $(function() {
 			$.ajax({
 				url:'https://sales.shkundi.com:5001/webman/sso/SSOAccessToken.cgi?action=exchange&access_token='+response.access_token+'&app_id=a1bf013a679c80f789805cbffd93849a',
 				type:"get",
+				headers:{'Access-Control-Allow-Origin':'*'},
 				success:function(res){console.log(res);document.getElementById("username").innerHTML = res.data.user_name;},
 				error:function(err){console.log(err);},
 			});
